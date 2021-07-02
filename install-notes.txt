@@ -1,0 +1,85 @@
+#BASE INSTALL
+pacstrap /mnt linux linux-firmware vim intel-ucode
+
+#ARCH-CHROOT PACKAGES 
+pacman -S grub efibootmgr networkmanager
+network-manager-applet dialog wpa_supplicant mtools dosfstools git reflector
+bluez bluez-utils cups hplip xdg-user-dirs alsa-utils pulseaudio
+pulseaudio-bluetooth inetutils base-devel linux-headers bash-completion
+
+#PACMAN
+xorg
+lightdm
+lightdm-gtk-greeter
+qtile
+xterm
+alacritty
+pcmanfm
+firefox
+sxhkd
+nitrogen
+unzip
+lxappearance
+neofetch
+rofi
+python-psutil
+ttf-roboto
+volumeicon
+blueberry
+lxsession
+gvfs
+gparted
+telegram-desktop
+code
+---Snapshot---
+telegram-desktop
+code
+audacity
+kdenlive
+obs-studio
+gnome-keyring
+xf86-input-synaptics (https://wiki.archlinux.org/title/Touchpad_Synaptics)
+xf86-video-intel (video driver)
+xfce4-appfinder
+---Snapshot---
+htop
+
+#AUR
+yay
+ttf-input
+picom-jonaburg-git
+pamac-aur
+gruvbox-material-gtk-theme-git
+gruvbox-material-icon-theme-git
+multilockscreen-git
+timeshift
+---Snapshot---
+mailspring
+spotify
+scid_vs_pc
+obsidian
+system76-power (sudo systemctl enable system76-power)
+system76-acpi-dkms
+system76-dkms
+system76-io-dkms
+bitwarden
+google-chrome
+everdo
+---Snapshot---
+zoom
+onlyoffice-bin
+ttf-ms-fonts
+ofono (helps with bluetooth audio - must systemctl enable)
+zotero
+
+#FROM SOURCE
+fontawesome
+---Snapshot---
+system76-firmware (https://support.system76.com/articles/system76-driver)
+system76-driver (https://support.system76.com/articles/system76-driver)
+Rofi Power Menu (https://github.com/jluttine/rofi-power-menu)
+---Snapshot---
+
+Comment out lines 41-44 in /usr/lib/blueberry/blueberry-tray.py to fix dark icon problem in the systray.
+
+Change ControllerMode = bredr in /etc/bluetooth/main.conf in order to pair AirPods
