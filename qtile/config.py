@@ -138,13 +138,13 @@ keys = [
 # Colors
 bg = "#282828"
 bg_accent = "#928374"
-fg = "ebdbb2"
-fg_accent = "a89984"
+fg = "#ebdbb2"
+fg_accent = "#a89984"
 color1 = "#cc241d"
 color1_accent = "#fb4934"
 color2 = "#98971a"
 color2_accent = "#b8bb26"
-color3 = "d79921"
+color3 = "#d79921"
 color3_accent = "#fabd2f"
 color4 = "#458588"
 color4_accent = "#83a598"
@@ -158,7 +158,7 @@ groups = []
 
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 
-group_labels = ["", "", "", "", "", "", "", "", "", "",]
+group_labels = ["", "", "", "", "", "", "", "", "", "",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
 
