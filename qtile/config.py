@@ -174,7 +174,6 @@ for i in range(len(group_names)):
 # Add group specific keybindings
 for i in groups:
     keys.extend([
-
         Key([mod], i.name, lazy.group[i.name].toscreen(),
             desc="Mod + number to move to that group."),
         Key(["mod1"], "Tab", lazy.screen.next_group(),
@@ -540,6 +539,7 @@ floating_layout = layout.Floating(float_rules=[
     {'wname': 'Open File'},
     {'wname': 'pinentry'},
     {'wmclass': 'ssh-askpass'},
+    {'wmclass': 'Mailspring'},
 
 ],  fullscreen_border_width = 0, border_width = 0)
 auto_fullscreen = True

@@ -110,6 +110,14 @@ Print
 #     FUNCTION KEYS
 #################################################################
 
+#Disable Touchpad
+F1
+    xinput disable 'ELAN040D:00 04F3:311D Touchpad'
+
+#Enable Touchpad
+shift + F1
+    xinput enable 'ELAN040D:00 04F3:311D Touchpad'
+
 #Mute
 F3
     amixer -D pulse set Master 1+ toggle
