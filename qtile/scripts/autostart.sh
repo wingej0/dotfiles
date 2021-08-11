@@ -44,7 +44,7 @@ picom --experimental-backends &
 run volumeicon &
 #run discord &
 nitrogen --restore &
-#run caffeine -a &
+run caffeine -a &
 #run vivaldi-stable &
 #run firefox &
 #run thunar &

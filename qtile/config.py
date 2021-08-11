@@ -133,32 +133,38 @@ keys = [
     Key([mod, "shift"], "Right", lazy.layout.swap_right(),
         desc="Shuffle window right."),
 
-    ]
+# Switch focus to specific monitor
+    Key([mod], "comma", lazy.to_screen(0),
+        desc='Keyboard focus to monitor 1'),
+    Key([mod], "period", lazy.to_screen(1),
+        desc='Keyboard focus to monitor 2'),
+
+]
 
 # Colors
-bg = "#282828"
-bg_accent = "#928374"
-fg = "#ebdbb2"
-fg_accent = "#a89984"
-color1 = "#cc241d"
-color1_accent = "#fb4934"
-color2 = "#98971a"
-color2_accent = "#b8bb26"
-color3 = "#d79921"
-color3_accent = "#fabd2f"
-color4 = "#458588"
-color4_accent = "#83a598"
-color5 = "#b16286"
-color5_accent = "#d3869b"
-color6 = "#689d6a"
-color6_accent = "#8ec07c"
+bg = "#2e3440"
+bg_accent = "#4c566a"
+fg = "#eceff4"
+fg_accent = "#e5e9f0"
+color1 = "#bf616a"
+color1_accent = "#d08770"
+color2 = "#8fbcbb"
+color2_accent = "#a3be8c"
+color3 = "#ebcb8b"
+color3_accent = "#d08770"
+color4 = "#5e81ac"
+color4_accent = "#5e81ac"
+color5 = "#b48ead"
+color5_accent = "#b48ead"
+color6 = "#88c0d0"
+color6_accent = "#8fbccb"
 
 # Create labels for groups and assign them a default layout.
 groups = []
 
 group_names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0",]
 
-group_labels = ["", "", "", "", "", "", "", "", "", "",]
+group_labels = ["", "", "", "", "", "", "", "", "", "",]
 
 group_layouts = ["monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall", "monadtall",]
 
@@ -247,9 +253,9 @@ def init_widgets_list():
                     rounded = False,
                     highlight_method = "line",
                     highlight_color = [bg, bg],
-                    this_current_screen_border = color2_accent,
+                    this_current_screen_border = color2,
                     other_screen_border = color3,
-                    other_current_screen_border = color3_accent,
+                    other_current_screen_border = color3,
                     urgent_alert_method = "line",
                     urgent_border = "color1",
                     urgent_text = "color1_accent",
@@ -258,7 +264,7 @@ def init_widgets_list():
                 ),
                 widget.TaskList(
                     icon_size = 0,
-                    font = "Input Mono",
+                    font = "Input Mono Bold",
                     foreground = fg,
                     background = bg,
                     borderwidth = 1,
@@ -403,13 +409,13 @@ def init_widgets_list():
 
 widgets_list = init_widgets_list()
 
-
 def init_widgets_screen1():
     widgets_screen1 = init_widgets_list()
     return widgets_screen1
 
 def init_widgets_screen2():
     widgets_screen2 = init_widgets_list()
+    del widgets_screen2[22:23]
     return widgets_screen2
 
 widgets_screen1 = init_widgets_screen1()
@@ -530,7 +536,6 @@ floating_layout = layout.Floating(float_rules=[
     {'wmclass': 'confirmreset'},
     {'wmclass': 'makebranch'},
     {'wmclass': 'maketag'},
-    {'wmclass': 'Arandr'},
     {'wmclass': 'feh'},
     {'wmclass': 'Galculator'},
     {'wmclass': 'arcolinux-logout'},

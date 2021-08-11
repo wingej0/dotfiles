@@ -98,6 +98,10 @@ ctrl + alt + r
 ctrl + alt + a
     xfce4-appfinder
 
+#Configure Portable Display
+ctrl + alt + 1
+    $HOME/.local/bin/portable_monitor
+
 #################################################################
 #     SCREENSHOTS
 #################################################################
@@ -182,3 +186,6 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
     xbacklight -dec 5
 
+#Google Apps Key Chords
+super + g; {f,p,d,s,x,c,t,b}
+    {/usr/bin/google-chrome-stable --app=https://drive.google.com,/usr/bin/google-chrome-stable --app=https://slides.google.com,/usr/bin/google-chrome-stable --app=https://docs.google.com,/usr/bin/google-chrome-stable --app=https://sheets.google.com,/usr/bin/google-chrome-stable --app=https://script.google.com,/usr/bin/google-chrome-stable --app=https://calendar.google.com,/opt/google/chrome/google-chrome --profile-directory=Default --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi,/usr/bin/google-chrome-stable}

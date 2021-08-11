@@ -1,11 +1,11 @@
 # Arch Install Notes
 ## Base Install
-```bash
+```shell
 pacstrap /mnt linux linux-firmware vim intel-ucode
 ```
 
 ## Arch-Chroot Packages
-```bash
+```shell
 pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools git reflector bluez bluez-utils cups hplip xdg-user-dirs alsa-utils pulseaudio pulseaudio-bluetooth inetutils base-devel linux-headers bash-completion
 ```
 ## Pacman Packages
@@ -50,13 +50,12 @@ pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_suppl
 39. linux-zen
 40. linux-zen-headers
 41. arandr
-42. deja-dup
-43. strawberry
-44. galculator
-45. sxiv
+42. strawberry
+43. galculator
+44. sxiv
 ### Command
-```bash
-sudo pacman -S xorg lightdm lightdm-gtk-greeter qtile xf86-input-libinput xterm alacritty pcmanfm firefox sxhkd nitrogen unzip lxappearance neofetch rofi python-psutil ttf-roboto volumeicon blueberry lxsession gvfs gparted telegram-desktop code audacity kdenlive obs-studio gnome-keyring xf86-video-intel xfce4-appfinder htop flameshot ncdu gvfs-google bleachbit linux-lts linux-lts-headers linux-zen linux-zen-headers arandr deja-dup strawberry galculator sxiv
+```shell
+sudo pacman -S xorg lightdm lightdm-gtk-greeter qtile xf86-input-libinput xterm alacritty pcmanfm firefox sxhkd nitrogen unzip lxappearance neofetch rofi python-psutil ttf-roboto volumeicon blueberry lxsession gvfs gparted telegram-desktop code audacity kdenlive obs-studio gnome-keyring xf86-video-intel xfce4-appfinder htop flameshot ncdu gvfs-google bleachbit linux-lts linux-lts-headers linux-zen linux-zen-headers arandr strawberry galculator sxiv
 ```
 ## AUR Packages
 ### List
@@ -88,9 +87,10 @@ sudo pacman -S xorg lightdm lightdm-gtk-greeter qtile xf86-input-libinput xterm 
 26. brave-bin
 27. lightdm-slick-greeter
 28. lightdm-settings
+29. code-marketplace
 ### Command
-```bash
-sudo yay -S ttf-input picom-jonaburg-git pamac-aur gruvbox-material-gtk-theme-git gruvbox-material-icon-theme-git multilockscreen-git timeshift mailspring spotify scid_vs_pc obsidian system76-power system76-acpi-dkms system76-dkms system76-io-dkms bitwarden google-chrome everdo zoom onlyoffice-bin ttf-ms-fonts ofono zotero gnome-control-center-nocheese gnome-calendar-git brave-bin lightdm-slick-greeter lightdm-settings
+```shell
+sudo yay -S ttf-input picom-jonaburg-git pamac-aur gruvbox-material-gtk-theme-git gruvbox-material-icon-theme-git multilockscreen-git timeshift mailspring spotify scid_vs_pc obsidian system76-power system76-acpi-dkms system76-dkms system76-io-dkms bitwarden google-chrome everdo zoom onlyoffice-bin ttf-ms-fonts ofono zotero gnome-control-center-nocheese gnome-calendar-git brave-bin lightdm-slick-greeter lightdm-settings code-marketplace
 ```
 ## Installed from Source
 1. [yay](https://github.com/Jguer/yay)
@@ -103,9 +103,10 @@ sudo yay -S ttf-input picom-jonaburg-git pamac-aur gruvbox-material-gtk-theme-gi
 ## Snaps
 ### List
 1. journey
+2. deja-dup
 ### Command
-```bash
-sudo snap install journey
+```shell
+sudo snap install journey deja-dup --classic
 ```
 ## Other Notes
 Comment out lines 41-44 in /usr/lib/blueberry/blueberry-tray.py to fix dark icon problem in the systray. The lines are shown below:
