@@ -4,7 +4,7 @@
 
 #Rofi
 super + space
-    rofi -show drun -show-icons
+    sh .config/rofi/launchers/misc/launcher.sh
 
 #code
 super + d 
@@ -16,11 +16,7 @@ super + b
 
 #Power Menu (Rofi)
 super + x
-    rofi -show power-menu -modi power-menu:~/.local/bin/rofi-power-menu -width 20 -lines 6	
-
-#Rofi theme selector
-super + r
-    rofi-theme-selector
+    sh .config/rofi/powermenu/powermenu.sh	
 
 #Everdo
 super + e
@@ -47,12 +43,12 @@ super + s
     spotify
 
 #Obsidian
-super + o
+super + n
     obsidian
 
 #Calendar
 super + c
-    gnome-calendar
+    /usr/bin/google-chrome-stable --app=https://calendar.google.com
 
 #Zotero
 super + z
@@ -65,6 +61,10 @@ super + j
 #Bibisco
 super + w
     /home/wingej0/.local/bin/bibisco-linux-x64-2.3.1-SE/bibisco
+
+#Pulse Audio Control
+super + v
+    pavucontrol
 
 #################################################################
 # SUPER + SHIFT KEYS
@@ -100,7 +100,15 @@ ctrl + alt + a
 
 #Configure Portable Display
 ctrl + alt + 1
-    $HOME/.local/bin/portable_monitor
+    $HOME/.local/bin/portable_monitor & nitrogen --restore
+
+#Office Monitor
+ctrl + alt + 2
+    $HOME/.local/bin/school_1_monitor
+
+#Laptop Only
+ctrl + alt + 0
+    $HOME/.local/bin/laptop
 
 #################################################################
 #     SCREENSHOTS
@@ -188,4 +196,4 @@ XF86MonBrightnessDown
 
 #Google Apps Key Chords
 super + g; {f,p,d,s,x,c,t,b}
-    {/usr/bin/google-chrome-stable --app=https://drive.google.com,/usr/bin/google-chrome-stable --app=https://slides.google.com,/usr/bin/google-chrome-stable --app=https://docs.google.com,/usr/bin/google-chrome-stable --app=https://sheets.google.com,/usr/bin/google-chrome-stable --app=https://script.google.com,/usr/bin/google-chrome-stable --app=https://calendar.google.com,/opt/google/chrome/google-chrome --profile-directory=Default --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi,/usr/bin/google-chrome-stable}
+    {/usr/bin/google-chrome-stable --app=https://drive.google.com,/usr/bin/google-chrome-stable --app=https://slides.google.com,/usr/bin/google-chrome-stable --app=https://docs.google.com,/usr/bin/google-chrome-stable --app=https://sheets.google.com,/usr/bin/google-chrome-stable --app=https://script.google.com,/usr/bin/google-chrome-stable --app=https://contacts.google.com,/opt/google/chrome/google-chrome --profile-directory=Default --app-id=mdpkiolbdkhdjpekfbkbmhigcaggjagi,/usr/bin/google-chrome-stable}

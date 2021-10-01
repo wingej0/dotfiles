@@ -36,15 +36,15 @@ run pamac-tray &
 run system76-power daemon &
 numlockx on &
 blueberry-tray &
-picom --experimental-backends &
+picom &
 /usr/bin/lxpolkit &
+lxsession &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
 #starting user applications at boot time
 run volumeicon &
 #run discord &
 nitrogen --restore &
-run caffeine -a &
 #run vivaldi-stable &
 #run firefox &
 #run thunar &
