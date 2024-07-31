@@ -23,10 +23,6 @@
     device = "/swapfile";
     size = 16 * 1024; # 16GB
   }];
-  
-  # System76
-  hardware.system76.enableAll = true;
-  services.power-profiles-daemon.enable = false;
 
   networking.hostName = "darter-pro"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -37,6 +33,10 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  networking.wireguard.enable = true;
+
+  # Enable flakes
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Set your time zone.
   time.timeZone = "America/Denver";
@@ -64,9 +64,9 @@
   services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
-  services.xserver = {
+  services.xserver.xkb = {
     layout = "us";
-    xkbVariant = "";
+    variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -101,6 +101,10 @@
     ];
   };
 
+  # System76
+  hardware.system76.enableAll = true;
+  services.power-profiles-daemon.enable = false;
+
   # Install firefox.
   programs.firefox.enable = true;
 
@@ -110,6 +114,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    # System76 Packages
+    system76-firmware
+
     # System Packages
     zsh
     alacritty
@@ -129,7 +136,6 @@
     bibata-cursors
     remmina
     popsicle
-    # xwayland
 
     # Browsers
     vivaldi
@@ -141,8 +147,8 @@
     jetbrains.pycharm-community
     mongodb-compass
     insomnia
-    # mongodb
-    # mongosh
+    mongodb
+    mongosh
 
     # Media
     obs-studio
@@ -198,7 +204,13 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  # Enable mongodb
+  services.mongodb = {
+    enable = true;
+    enableAuth = true;
+    initialRootPassword = "mongodbroot";
+    bind_ip = "0.0.0.0";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -209,13 +221,15 @@
   # };
 
   # List services that you want to enable:
+  services.nordvpn.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.checkReversePath = false;
+  networking.firewall.allowedTCPPorts = [ 443 ];
+  networking.firewall.allowedUDPPorts = [ 1194 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
