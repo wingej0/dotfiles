@@ -3,7 +3,7 @@
 {
   imports = [
     ./home/zsh.nix
-    ./home/git.nix
+    # ./home/git.nix
     ./home/gnome.nix
     ./home/gtk.nix
   ];
