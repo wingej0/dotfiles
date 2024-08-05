@@ -45,19 +45,17 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    # Source dotfiles to .config
     ".config/alacritty".source = ./configs/alacritty;
+    ".config/dunst".source = ./configs/dunst;
     ".config/fastfetch".source = ./configs/fastfetch;
+    ".config/picom".source = ./configs/picom;
+    ".config/qtile".source = ./configs/qtile;
+    ".config/rofi".source = ./configs/rofi;
+    ".config/swappy".source = ./configs/swappy;
+    ".config/swaylock".source = ./configs/swaylock;
     ".config/wallust".source = ./configs/wallust;
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    ".config/wlogout".source = ./configs/wlogout;
   };
 
   # Home Manager can also manage your environment variables through

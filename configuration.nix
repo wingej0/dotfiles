@@ -63,6 +63,60 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  specialisation = {
+    qtile-desktop.configuration = {
+
+      # Enable Qtile
+      services.xserver.windowManager.qtile = {
+        enable = true;
+        extraPackages = python3Packages: with python3Packages; [
+          qtile-extras
+        ];
+      };
+
+      environment.systemPackages = with pkgs; [
+
+        # Wayland Programs
+        rofi-wayland
+        grim
+        slurp
+        swappy
+        wl-clipboard
+        cliphist
+        swayidle
+        swaylock-effects
+        polkit_gnome
+        wlogout
+        wlr-randr
+        dunst
+        playerctl
+        brightnessctl
+        xwayland
+
+        # X11 Programs
+        picom
+        haskellPackages.greenclip
+        numlockx
+        flameshot
+        betterlockscreen
+        arandr
+        peek
+      ];
+
+      programs.xwayland.enable = true;
+
+      # Enable pam for swaylock, so it will actually unlock
+      security.pam.services.swaylock = {};
+      services.gnome.gnome-keyring.enable = true;
+
+      environment.sessionVariables = {
+        EDITOR = "vim";
+        GTK_THEME = "Orchis";
+        NIXOS_OZONE_WL = "1";
+      };
+    };
+  };
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -95,7 +149,7 @@
   users.users.wingej0 = {
     isNormalUser = true;
     description = "Jeff Winget";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "adm" "nordvpn" ];
     packages = with pkgs; [
     #  thunderbird
     ];
@@ -185,7 +239,6 @@
       jupyterlab
       pymongo
       matplotlib
-      matplotlib-venn
     ]))
 
     # Games
