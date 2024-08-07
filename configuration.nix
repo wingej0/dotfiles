@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./system/fonts.nix
+      ./system/input-remapper.nix
     ];
 
   # Bootloader.
@@ -75,6 +76,12 @@
       };
 
       environment.systemPackages = with pkgs; [
+        pavucontrol
+
+        # Portals
+        xdg-desktop-portal
+        xdg-desktop-portal-wlr
+        xdg-desktop-portal-gtk
 
         # Wayland Programs
         rofi-wayland
@@ -92,6 +99,7 @@
         playerctl
         brightnessctl
         xwayland
+        nwg-look
 
         # X11 Programs
         picom
@@ -190,6 +198,7 @@
     bibata-cursors
     remmina
     popsicle
+    gparted
 
     # Browsers
     vivaldi
@@ -219,7 +228,6 @@
     gnome-text-editor
     obsidian
     onlyoffice-bin
-    planify
     evince
     libreoffice-fresh
     
@@ -228,7 +236,6 @@
     caprine-bin
     discord
     zoom-us
-    mailspring
 
     # Python Environment
     (python3.withPackages (ps: with ps; [
@@ -252,10 +259,19 @@
     nordvpn = config.nur.repos.LuisChDev.nordvpn;
   };
 
+  services.flatpak.enable = true;
+
   # Change shell to zsh
   environment.shells = with pkgs; [zsh bash];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
+
+  system.activationScripts.binbash = {
+    deps = [ "binsh" ];
+    text = ''
+         ln -s /bin/sh /bin/bash
+    '';
+  };
 
   # Enable mongodb
   services.mongodb = {
