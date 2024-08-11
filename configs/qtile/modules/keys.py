@@ -172,13 +172,13 @@ mouse = [
 
 # Application keybindings
 keys.extend([
-    Key([mod, "shift"], "Return", lazy.spawn("nautilus"),
+    Key([mod, "shift"], "Return", lazy.spawn("thunar"),
         desc="Launch file browser"),
     Key([mod], "Space", lazy.spawn("rofi -show drun"),
         desc="Application launcher"),
     Key([mod], "b", lazy.spawn("firefox"),
         desc="Launch web browser"),
-    Key([mod], "m", lazy.spawn("mailspring --password-store='gnome-libsecret'"),
+    Key([mod], "m", lazy.spawn("geary"),
         desc="Launch email client"),
     Key([mod], "c", lazy.spawn("gnome-calendar"),
         desc="Launch Calendar"),

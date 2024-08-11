@@ -8,9 +8,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Cosmic desktop
+    nixos-cosmic = {
+      url = "github:lilyinstarlight/nixos-cosmic";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, ... }:
+  outputs = { self, nixpkgs, home-manager, nur, nixos-cosmic, ... }:
     let 
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -25,6 +30,13 @@
           pkgs = nixpkgs.legacyPackages.${system};
         };
         in [
+          {
+            nix.settings = {
+              substituters = [ "https://cosmic.cachix.org/" ];
+              trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+            };
+          }
+          nixos-cosmic.nixosModules.default
           ./configuration.nix
           nur.nixosModules.nur
           nur-modules.repos.LuisChDev.modules.nordvpn

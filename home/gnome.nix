@@ -2,9 +2,8 @@
 {
     home.packages = with pkgs; [
         # Themes
-        orchis-theme
-        tela-icon-theme
-
+        adw-gtk3
+        
         # Gnome extensions
         pkgs.gnome-tweaks
         gnomeExtensions.dash-to-dock

@@ -60,12 +60,16 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
   specialisation = {
+    gnome-desktop.configuration = {
+      # Enable the GNOME Desktop Environment.
+      services.xserver.displayManager.gdm.enable = true;
+      services.xserver.desktopManager.gnome.enable = true;
+    };
     qtile-desktop.configuration = {
+      # Enable the GNOME Desktop Environment.
+      services.xserver.displayManager.gdm.enable = true;
+      services.xserver.desktopManager.gnome.enable = true;
 
       # Enable Qtile
       services.xserver.windowManager.qtile = {
@@ -75,7 +79,10 @@
         ];
       };
 
+      hardware.bluetooth.enable = true;
+
       environment.systemPackages = with pkgs; [
+        xfce.thunar
         pavucontrol
 
         # Portals
@@ -99,7 +106,6 @@
         playerctl
         brightnessctl
         xwayland
-        nwg-look
 
         # X11 Programs
         picom
@@ -119,9 +125,16 @@
 
       environment.sessionVariables = {
         EDITOR = "vim";
-        GTK_THEME = "Orchis";
+        GTK_THEME = "Adwaita";
         NIXOS_OZONE_WL = "1";
       };
+    };
+
+    cosmic-desktop.configuration = {
+
+      # Enable cosmic
+      services.displayManager.cosmic-greeter.enable = true;
+      services.desktopManager.cosmic.enable = true;
     };
   };
 
@@ -230,6 +243,7 @@
     onlyoffice-bin
     evince
     libreoffice-fresh
+    planify
     
     # Communication
     telegram-desktop
@@ -258,8 +272,6 @@
   nixpkgs.config.packageOverrides = pkgs: {
     nordvpn = config.nur.repos.LuisChDev.nordvpn;
   };
-
-  services.flatpak.enable = true;
 
   # Change shell to zsh
   environment.shells = with pkgs; [zsh bash];

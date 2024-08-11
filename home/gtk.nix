@@ -9,8 +9,8 @@
         };
 
         theme = {
-            name = "Orchis";
-            package = pkgs.orchis-theme;
+            name = "Adwaita";
+            package = pkgs.adw-gtk3;
         };
 
         cursorTheme = {
