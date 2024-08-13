@@ -4,13 +4,13 @@
         enable = true;
 
         iconTheme = {
-            name = "Tela-dark";
-            package = pkgs.tela-icon-theme;
+            name = "Pop";
+            package = pkgs.pop-icon-theme;
         };
 
         theme = {
-            name = "Adwaita";
-            package = pkgs.adw-gtk3;
+            name = "Pop-dark";
+            package = pkgs.pop-gtk-theme;
         };
 
         cursorTheme = {

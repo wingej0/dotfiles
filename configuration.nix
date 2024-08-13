@@ -67,10 +67,11 @@
       services.xserver.desktopManager.gnome.enable = true;
     };
     qtile-desktop.configuration = {
+
       # Enable the GNOME Desktop Environment.
       services.xserver.displayManager.gdm.enable = true;
       services.xserver.desktopManager.gnome.enable = true;
-
+      
       # Enable Qtile
       services.xserver.windowManager.qtile = {
         enable = true;
@@ -80,10 +81,11 @@
       };
 
       hardware.bluetooth.enable = true;
-
+      
       environment.systemPackages = with pkgs; [
         xfce.thunar
         pavucontrol
+        bibata-cursors
 
         # Portals
         xdg-desktop-portal
@@ -106,6 +108,7 @@
         playerctl
         brightnessctl
         xwayland
+        nwg-look
 
         # X11 Programs
         picom
@@ -125,7 +128,7 @@
 
       environment.sessionVariables = {
         EDITOR = "vim";
-        GTK_THEME = "Adwaita";
+        GTK_THEME = "Pop-dark";
         NIXOS_OZONE_WL = "1";
       };
     };
@@ -136,9 +139,6 @@
       services.displayManager.cosmic-greeter.enable = true;
       services.desktopManager.cosmic.enable = true;
 
-      environment.systemPackages = with pkgs; [
-        thunderbird
-      ];
     };
   };
 
@@ -212,7 +212,7 @@
     wallust
     variety
     veracrypt
-    bibata-cursors
+    # bibata-cursors
     remmina
     popsicle
     gparted
@@ -248,6 +248,9 @@
     evince
     libreoffice-fresh
     planify
+    thunderbird
+    geary
+    betterbird
     
     # Communication
     telegram-desktop

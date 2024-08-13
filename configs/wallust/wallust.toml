@@ -83,9 +83,9 @@ check_contrast = true
 # target: Absolute path in which to place a file with generated templated values
 # NOTE: prefer '' over "" for paths, avoids escaping.
 #zathura = { template = 'zathura', target = '~/.config/zathura/zathurarc' }
-qtile = { template = 'templates/colors-qtile.json', target = '~/.cache/qtile/colors.json' } 
-rofi = { template = 'templates/colors-rofi-pywal.rasi', target = '~/.cache/rofi/colors-rofi-pywal.rasi' }
-wlogout = { template = 'templates/colors-wlogout.css', target = '~/.cache/wlogout/colors-wlogout.css' }
+qtile = { template = 'colors-qtile.json', target = '~/.cache/qtile/colors.json' } 
+rofi = { template = 'colors-rofi-pywal.rasi', target = '~/.cache/rofi/colors-rofi-pywal.rasi' }
+wlogout = { template = 'colors-wlogout.css', target = '~/.cache/wlogout/colors-wlogout.css' }
 
 # OPTIONALLY It can accept `new_engine = true`: This "new engine" difers by using  double brackets like `{{variable}}`
 # instead of one like usual, which helps with file formats that use brackets like json. With the `new_engine` enabled

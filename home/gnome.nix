@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 {
     home.packages = with pkgs; [
-        # Themes
-        adw-gtk3
         
         # Gnome extensions
         pkgs.gnome-tweaks
