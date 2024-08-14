@@ -172,7 +172,7 @@ mouse = [
 
 # Application keybindings
 keys.extend([
-    Key([mod, "shift"], "Return", lazy.spawn("nautilus"),
+    Key([mod, "shift"], "Return", lazy.spawn("thunar"),
         desc="Launch file browser"),
     Key([mod], "Space", lazy.spawn("rofi -show drun"),
         desc="Application launcher"),
