@@ -97,12 +97,15 @@
         grim
         slurp
         swappy
+        wf-recorder
+        zenity
         wl-clipboard
         cliphist
         swayidle
         swaylock-effects
         polkit_gnome
         wlogout
+        ffmpeg
         wlr-randr
         dunst
         playerctl

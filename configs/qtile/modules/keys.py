@@ -243,8 +243,10 @@ elif qtile.core.name == "wayland":
             desc="Lock screen"),
         Key(["control", "mod1"], "delete", lazy.spawn("wlogout"),
             desc="Launch powermenu"),
-        Key([mod], "v", lazy.spawn("/home/wingej0/dotfiles/qtile/scripts/clipboard.sh"),
+        Key([mod], "v", lazy.spawn("/home/wingej0/.dotfiles/configs/qtile/scripts/clipboard.sh"),
             desc="Clipboard Manager"),
+        Key([mod], "print", lazy.spawn("/home/wingej0/.dotfiles/configs/qtile/scripts/gif-recorder.sh"),
+            desc="Gif Recorder")
     ])
 
 
