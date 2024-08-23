@@ -17,7 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   
   # Kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Define the swap
   swapDevices = [{
@@ -61,16 +61,16 @@
   services.xserver.enable = true;
 
   specialisation = {
-    gnome-desktop.configuration = {
-      # Enable the GNOME Desktop Environment.
-      services.xserver.displayManager.gdm.enable = true;
-      services.xserver.desktopManager.gnome.enable = true;
-    };
+    # gnome-desktop.configuration = {
+    #   # Enable the GNOME Desktop Environment.
+    #   services.xserver.displayManager.gdm.enable = true;
+    #   services.xserver.desktopManager.gnome.enable = true;
+    # };
     qtile-desktop.configuration = {
 
       # Enable the GNOME Desktop Environment.
-      services.xserver.displayManager.gdm.enable = true;
-      services.xserver.desktopManager.gnome.enable = true;
+      services.xserver.displayManager.lightdm.enable = true;
+      # services.xserver.desktopManager.gnome.enable = true;
       
       # Enable Qtile
       services.xserver.windowManager.qtile = {
@@ -85,7 +85,7 @@
       environment.systemPackages = with pkgs; [
         xfce.thunar
         pavucontrol
-        bibata-cursors
+        python3
 
         # Portals
         xdg-desktop-portal
@@ -124,6 +124,7 @@
       ];
 
       programs.xwayland.enable = true;
+      programs.dconf.enable = true;
 
       # Enable pam for swaylock, so it will actually unlock
       security.pam.services.swaylock = {};
@@ -142,6 +143,7 @@
       services.displayManager.cosmic-greeter.enable = true;
       services.desktopManager.cosmic.enable = true;
 
+      programs.dconf.enable = true;
     };
   };
 
@@ -232,6 +234,8 @@
     insomnia
     mongodb
     mongosh
+    unixODBC
+    unixODBCDrivers.msodbcsql18
 
     # Media
     obs-studio
@@ -252,25 +256,12 @@
     libreoffice-fresh
     planify
     thunderbird
-    geary
-    betterbird
     
     # Communication
     telegram-desktop
     caprine-bin
     discord
     zoom-us
-
-    # Python Environment
-    (python3.withPackages (ps: with ps; [
-      requests
-      pip
-      numpy
-      pandas
-      jupyterlab
-      pymongo
-      matplotlib
-    ]))
 
     # Games
     gnome-2048
@@ -282,6 +273,8 @@
   nixpkgs.config.packageOverrides = pkgs: {
     nordvpn = config.nur.repos.LuisChDev.nordvpn;
   };
+
+  environment.unixODBCDrivers = with pkgs.unixODBCDrivers; [ msodbcsql18 ];
 
   # Change shell to zsh
   environment.shells = with pkgs; [zsh bash];
