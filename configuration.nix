@@ -61,18 +61,10 @@
   services.xserver.enable = true;
 
   specialisation = {
-    # gnome-desktop.configuration = {
-    #   # Enable the GNOME Desktop Environment.
-    #   services.xserver.displayManager.gdm.enable = true;
-    #   services.xserver.desktopManager.gnome.enable = true;
-    # };
     qtile-desktop.configuration = {
-
-      # Enable the GNOME Desktop Environment.
-      services.xserver.displayManager.lightdm.enable = true;
-      # services.xserver.desktopManager.gnome.enable = true;
-      
+    
       # Enable Qtile
+      services.xserver.displayManager.lightdm.enable = true;
       services.xserver.windowManager.qtile = {
         enable = true;
         extraPackages = python3Packages: with python3Packages; [
@@ -81,6 +73,8 @@
       };
 
       hardware.bluetooth.enable = true;
+      services.udisks2.enable = true;
+      services.gvfs.enable = true;
       
       environment.systemPackages = with pkgs; [
         xfce.thunar
@@ -142,8 +136,6 @@
       # Enable cosmic
       services.displayManager.cosmic-greeter.enable = true;
       services.desktopManager.cosmic.enable = true;
-
-      programs.dconf.enable = true;
     };
   };
 
@@ -217,10 +209,12 @@
     wallust
     variety
     veracrypt
-    # bibata-cursors
+    bibata-cursors
     remmina
     popsicle
     gparted
+    loupe
+    file-roller
 
     # Browsers
     vivaldi
@@ -281,12 +275,12 @@
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
-  system.activationScripts.binbash = {
-    deps = [ "binsh" ];
-    text = ''
-         ln -s /bin/sh /bin/bash
-    '';
-  };
+  # system.activationScripts.binbash = {
+  #   deps = [ "binsh" ];
+  #   text = ''
+  #        ln -s /bin/sh /bin/bash
+  #   '';
+  # };
 
   # Enable mongodb
   services.mongodb = {

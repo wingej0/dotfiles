@@ -38,5 +38,9 @@ wl_input_rules = {
     "type:touchpad": InputConfig(tap=True, natural_scroll=True, dwt=True),
 }
 
+# Cursor theme
+wl_xcursor_theme = "Bibata-Modern-Classic"
+wl_xcursor_size = 24
+
 # Name of the window manager
 wmname = "qtile"
