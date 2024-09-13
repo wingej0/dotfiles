@@ -8,8 +8,21 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      # Networking
+      ./system/networking.nix
+
+      # Programs and software
+      ./system/browsers.nix
+      ./system/communication.nix
+      ./system/development.nix
       ./system/fonts.nix
+      ./system/games.nix
       ./system/input-remapper.nix
+      ./system/media.nix
+      ./system/office.nix
+      ./system/system.nix
+      ./system/system76.nix
     ];
 
   # Bootloader.
@@ -24,17 +37,6 @@
     device = "/swapfile";
     size = 16 * 1024; # 16GB
   }];
-
-  networking.hostName = "darter-pro"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-  networking.wireguard.enable = true;
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -130,8 +132,6 @@
       services.gnome.gnome-keyring.enable = true;
 
       environment.sessionVariables = {
-        EDITOR = "vim";
-        GTK_THEME = "Pop-dark";
         NIXOS_OZONE_WL = "1";
       };
     };
@@ -182,118 +182,13 @@
     ];
   };
 
-  # System76
-  hardware.system76.enableAll = true;
-  services.power-profiles-daemon.enable = false;
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    # System76 Packages
-    system76-firmware
-
-    # System Packages
-    zsh
-    alacritty
-    git
-    gh
-    wget
-    vim
-    htop
-    acpi
-    killall
-    fzf
-    pika-backup
-    fastfetch
-    wallust
-    variety
-    veracrypt
-    bibata-cursors
-    remmina
-    popsicle
-    gparted
-    loupe
-    file-roller
-
-    # Browsers
-    vivaldi
-    brave
-    google-chrome
-
-    # Development
-    vscode-fhs
-    jetbrains.pycharm-community
-    mongodb-compass
-    insomnia
-    mongodb
-    mongosh
-    unixODBC
-    unixODBCDrivers.msodbcsql18
-
-    # Media
-    obs-studio
-    kdePackages.kdenlive
-    mpv
-    audacity
-    gimp
-    cider
-    imagemagick
-    libheif # For converting .heic images
-    yt-dlp
-
-    # Office
-    gnome-text-editor
-    obsidian
-    onlyoffice-bin
-    evince
-    libreoffice-fresh
-    planify
-    thunderbird
-    
-    # Communication
-    telegram-desktop
-    caprine-bin
-    discord
-    zoom-us
-
-    # Games
-    gnome-2048
-    scid-vs-pc
-    stockfish
-    lc0  
-  ];
-
-  nixpkgs.config.packageOverrides = pkgs: {
-    nordvpn = config.nur.repos.LuisChDev.nordvpn;
-  };
-
-  environment.unixODBCDrivers = with pkgs.unixODBCDrivers; [ msodbcsql18 ];
 
   # Change shell to zsh
   environment.shells = with pkgs; [zsh bash];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
-
-  # system.activationScripts.binbash = {
-  #   deps = [ "binsh" ];
-  #   text = ''
-  #        ln -s /bin/sh /bin/bash
-  #   '';
-  # };
-
-  # Enable mongodb
-  services.mongodb = {
-    enable = true;
-    enableAuth = true;
-    initialRootPassword = "mongodbroot";
-    bind_ip = "0.0.0.0";
-  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -304,17 +199,9 @@
   # };
 
   # List services that you want to enable:
-  services.nordvpn.enable = true;
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  networking.firewall.checkReversePath = false;
-  networking.firewall.allowedTCPPorts = [ 443 ];
-  networking.firewall.allowedUDPPorts = [ 1194 ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
