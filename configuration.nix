@@ -84,7 +84,6 @@
       services.gvfs.enable = true;
       
       environment.systemPackages = with pkgs; [
-        xfce.thunar
         pavucontrol
         python3
 
@@ -92,6 +91,12 @@
         xdg-desktop-portal
         xdg-desktop-portal-wlr
         xdg-desktop-portal-gtk
+
+        # Gnome stuff
+        gnome-online-accounts
+        gnome-calendar
+        geary
+        nautilus
 
         # Wayland Programs
         rofi-wayland
@@ -126,6 +131,17 @@
 
       programs.xwayland.enable = true;
       programs.dconf.enable = true;
+      services.gnome.evolution-data-server.enable = true;
+      services.gnome.gnome-online-accounts.enable = true;
+
+      xdg.portal = {
+        enable = true;
+        config.common.default = "*";
+          extraPortals = with pkgs; [
+            xdg-desktop-portal-wlr
+            xdg-desktop-portal-gtk
+          ];
+        };
 
       # Enable pam for swaylock, so it will actually unlock
       security.pam.services.swaylock = {};

@@ -12,6 +12,7 @@
     mongosh
     unixODBC
     unixODBCDrivers.msodbcsql18
+    gImageReader
   ];
 
   environment.unixODBCDrivers = with pkgs.unixODBCDrivers; [ msodbcsql18 ];

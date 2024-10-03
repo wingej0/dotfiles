@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
+        color-scheme = "prefer-light";
       };
     };
   };
@@ -22,13 +22,13 @@
         "file://${home}/dev"
       ];
       extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
+        gtk-application-prefer-dark-theme = 0;
       };
     };
 
     gtk4 = {
       extraConfig = {
-        gtk-application-prefer-dark-theme = 1;
+        gtk-application-prefer-dark-theme = 0;
       };
     };
 
@@ -46,13 +46,17 @@
     };
 
     theme = {
-        name = "Pop-dark";
-        package = pkgs.pop-gtk-theme;
+      name = "Orchis";
+      package = pkgs.orchis-theme;
+      # name = "Pop-dark";
+      # package = pkgs.pop-gtk-theme;
     };
 
     iconTheme = {
-        name = "Pop";
-        package = pkgs.pop-icon-theme;
+      name = "Tela-dark";
+      package = pkgs.tela-icon-theme;
+      # name = "Pop";
+      # package = pkgs.pop-icon-theme;
     };
   };
 }
