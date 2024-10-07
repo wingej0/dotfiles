@@ -12,7 +12,7 @@
       # Networking
       ./system/networking.nix
 
-      # Setups
+      # Desktop / Window Manager Setups
       ./system/specialisations/gnome.nix
       ./system/specialisations/qtile.nix
       ./system/specialisations/cosmic.nix
@@ -95,11 +95,15 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # Virtualization
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.wingej0 = {
     isNormalUser = true;
     description = "Jeff Winget";
-    extraGroups = [ "networkmanager" "wheel" "adm" "nordvpn" ];
+    extraGroups = [ "networkmanager" "wheel" "adm" "nordvpn" "libvirtd" ];
     packages = with pkgs; [
     #  thunderbird
     ];

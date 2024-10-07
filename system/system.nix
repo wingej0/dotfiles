@@ -24,5 +24,6 @@
     gparted
     loupe
     file-roller
+    virt-manager
   ];
 }
