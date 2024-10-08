@@ -37,12 +37,6 @@
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_zen;
 
-  # Define the swap
-  swapDevices = [{
-    device = "/swapfile";
-    size = 16 * 1024; # 16GB
-  }];
-
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

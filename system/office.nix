@@ -10,6 +10,5 @@
     evince
     libreoffice-fresh
     planify
-    thunderbird
   ];
 }

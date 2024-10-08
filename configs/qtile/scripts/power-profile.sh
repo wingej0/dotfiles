@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 state=`cat /sys/class/power_supply/AC/online`
 

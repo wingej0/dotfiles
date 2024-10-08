@@ -9,7 +9,6 @@
     mpv
     audacity
     gimp
-    cider
     imagemagick
     libheif # For converting .heic images
     yt-dlp

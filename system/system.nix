@@ -25,5 +25,7 @@
     loupe
     file-roller
     virt-manager
+    bibata-cursors
+    orchis-theme
   ];
 }
