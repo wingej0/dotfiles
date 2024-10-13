@@ -28,7 +28,7 @@
                 # Gnome stuff
                 gnome-online-accounts
                 gnome-calendar
-                geary
+                # geary
                 nautilus
 
                 # Wayland Programs

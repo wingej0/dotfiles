@@ -27,5 +27,7 @@
     virt-manager
     bibata-cursors
     orchis-theme
+    deja-dup
+    eza
   ];
 }

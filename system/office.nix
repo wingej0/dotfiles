@@ -10,5 +10,6 @@
     evince
     libreoffice-fresh
     planify
+    mailspring
   ];
 }

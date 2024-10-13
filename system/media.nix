@@ -12,5 +12,6 @@
     imagemagick
     libheif # For converting .heic images
     yt-dlp
+    cider
   ];
 }
