@@ -93,11 +93,20 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
+  # enable docker
+  virtualisation.docker.enable = true;
+
+  # use docker without Root access (Rootless docker)
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.wingej0 = {
     isNormalUser = true;
     description = "Jeff Winget";
-    extraGroups = [ "networkmanager" "wheel" "adm" "nordvpn" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "adm" "nordvpn" "libvirtd" "docker" ];
     packages = with pkgs; [
     #  thunderbird
     ];

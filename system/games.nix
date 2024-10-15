@@ -8,5 +8,6 @@
     scid-vs-pc
     stockfish
     lc0  
+    zeroad
   ];
 }
