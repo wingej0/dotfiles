@@ -25,6 +25,7 @@
       ./system/games.nix
       ./system/input-remapper.nix
       ./system/media.nix
+      ./system/msfonts.nix
       ./system/office.nix
       ./system/system.nix
       ./system/system76.nix

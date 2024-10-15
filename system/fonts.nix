@@ -7,7 +7,5 @@
         dejavu_fonts
         fira-code-nerdfont
         font-awesome
-        corefonts
-        vistafonts
     ];
 }
