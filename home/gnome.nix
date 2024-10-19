@@ -14,7 +14,6 @@
         gnomeExtensions.user-themes
         gnomeExtensions.gnordvpn-local
 
-        pkgs.gnome-boxes
         pkgs.gnome-calculator
     ];
 }

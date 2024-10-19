@@ -264,7 +264,7 @@ def init_widgets(monitor):
             fmt = "{}",
             padding = 10,
             paused_text = " {track}",
-            width = 200,
+            width = 175,
             **widget_defaults,
         ),
         widget.Sep(

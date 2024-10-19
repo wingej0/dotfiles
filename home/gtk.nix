@@ -39,24 +39,20 @@
     };
 
     cursorTheme = {
-      name = "Adwaita";
-      # name = "Bibata-Modern-Classic";
-      # package = pkgs.bibata-cursors;
+      # name = "Adwaita";
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
       size = 24;
     };
 
     theme = {
       name = "Orchis";
       package = pkgs.orchis-theme;
-      # name = "Pop-dark";
-      # package = pkgs.pop-gtk-theme;
     };
 
     iconTheme = {
       name = "Tela-dark";
       package = pkgs.tela-icon-theme;
-      # name = "Pop";
-      # package = pkgs.pop-icon-theme;
     };
   };
 }

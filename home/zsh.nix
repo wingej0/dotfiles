@@ -17,7 +17,8 @@
             fastfetch
         '';
         shellAliases = {
-            ll = "ls -la";
+            ls = "eza --icons";
+            ll = "eza --icons -la";
             nrs = "sudo nixos-rebuild boot --flake .";
             hms = "home-manager switch --flake .";
             update = "nix flake update";
