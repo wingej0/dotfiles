@@ -28,7 +28,7 @@
       ./system/msfonts.nix
       ./system/office.nix
       ./system/system.nix
-      ./system/system76.nix
+      # ./system/system76.nix
     ];
 
   # Bootloader.

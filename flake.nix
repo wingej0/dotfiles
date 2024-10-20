@@ -13,9 +13,19 @@
       url = "github:lilyinstarlight/nixos-cosmic";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Qtile and qtile-extras
+    qtile-flake = {
+      url = "github:qtile/qtile";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    qtile-extras-flake = {
+      url = "github:elparaguayo/qtile-extras";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, nixos-cosmic, ... }:
+  outputs = { self, nixpkgs, home-manager, nur, nixos-cosmic, qtile-flake, qtile-extras-flake, ... }:
     let 
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -26,8 +36,8 @@
         inherit system;
         modules = let
           nur-modules = import nur rec {
-          nurpkgs = nixpkgs.legacyPackages.${system};
-          pkgs = nixpkgs.legacyPackages.${system};
+            nurpkgs = nixpkgs.legacyPackages.${system};
+            pkgs = nixpkgs.legacyPackages.${system};
         };
         in [
           {
@@ -36,6 +46,7 @@
               trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
             };
           }
+          (_: { nixpkgs.overlays = [ qtile-flake.overlays.default ]; })
           nixos-cosmic.nixosModules.default
           ./configuration.nix
           nur.nixosModules.nur
