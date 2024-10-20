@@ -33,7 +33,7 @@
     in {
     nixosConfigurations = {
       darter-pro = lib.nixosSystem {
-        inherit system;
+        specialArgs = {inherit system qtile-extras-flake;};
         modules = let
           nur-modules = import nur rec {
             nurpkgs = nixpkgs.legacyPackages.${system};
