@@ -1,3 +1,4 @@
+{ inputs, ... }:
 {
   nixpkgs.overlays = [
     (final: prev: {
@@ -8,7 +9,7 @@
             qtile-extras = (python-prev.qtile-extras.overrideAttrs (old: {
               # version = inputs.qtile-extras-flake.shortRev;
               # use the source of the git repo
-              src = qtile-extras-flake.outPath;
+              src = inputs.qtile-extras-flake.outPath;
             }));
           })
         ];

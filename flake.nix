@@ -25,7 +25,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, nixos-cosmic, qtile-flake, qtile-extras-flake, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nur, nixos-cosmic, qtile-flake, qtile-extras-flake, ... }:
     let 
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -48,6 +48,7 @@
           }
           (_: { nixpkgs.overlays = [ qtile-flake.overlays.default ]; })
           nixos-cosmic.nixosModules.default
+          ./overlays.nix
           ./configuration.nix
           nur.nixosModules.nur
           nur-modules.repos.LuisChDev.modules.nordvpn
