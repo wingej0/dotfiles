@@ -22,7 +22,7 @@
     };
   };
 
-  outputs = { nixpkgs, nur, home-manager, ... } @ inputs: 
+  outputs = { nixpkgs, home-manager, ... } @ inputs: 
   let 
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -32,6 +32,8 @@
       darter-pro = lib.nixosSystem {
         specialArgs = {
           inherit inputs;
+          username = "wingej0";
+          hostname = "darter-pro";
         };
         modules = [
           ./hosts

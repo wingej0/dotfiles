@@ -13,7 +13,7 @@
 
                 # Networking
                 ./modules/networking.nix
-                ./modules/nordvpn.nix
+                # ./modules/nordvpn.nix
 
                 # Packages
                 ./modules/browsers.nix

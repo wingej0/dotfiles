@@ -1,4 +1,4 @@
-{ config, pkgs, nur, ... }:
+{ config, nixpkgs, nur, ... }:
 let 
     lib = nixpkgs.lib;
     system = "x86_64-linux";
