@@ -1,5 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
+    imports = [
+        {
+            nix.settings = {
+                substituters = [ "https://cosmic.cachix.org/" ];
+                trusted-public-keys = [ "cosmic.cachix.org-1:Dya9IyXD4xdBehWjrkPv6rtxpmMdRel02smYzA85dPE=" ];
+            };
+        }
+        inputs.nixos-cosmic.nixosModules.default
+    ];
+
     specialisation = {
         cosmic-desktop.configuration = {
             services.displayManager.cosmic-greeter.enable = true;
@@ -9,7 +19,6 @@
                 # Gnome stuff
                 gnome-online-accounts
                 gnome-calendar
-                # geary
             ];
 
             programs.dconf.enable = true;

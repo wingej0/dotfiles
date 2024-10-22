@@ -7,12 +7,6 @@
   networking.networkmanager.enable = true;
   networking.wireguard.enable = true;
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    nordvpn = config.nur.repos.LuisChDev.nordvpn;
-  };
-
-  services.nordvpn.enable = true;
-
   # Open ports in the firewall.
   networking.firewall.checkReversePath = false;
   networking.firewall.allowedTCPPorts = [ 443 ];

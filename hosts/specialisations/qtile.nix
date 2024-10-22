@@ -1,6 +1,12 @@
-{ config, pkgs, ... }:
+{ config, pkgs,  inputs, ... }:
 {
+    imports = [
+        (_: { nixpkgs.overlays = [ inputs.qtile-flake.overlays.default ]; })
+        ./../overlays/qtile-extras-overlay.nix
+    ];
+    
     specialisation = {
+
         qtile-desktop.configuration = {
         
             # Enable Qtile

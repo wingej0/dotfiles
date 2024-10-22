@@ -8,27 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-
-      # Networking
-      ./system/networking.nix
-
-      # Desktop / Window Manager Setups
-      ./system/specialisations/gnome.nix
-      ./system/specialisations/qtile.nix
-      ./system/specialisations/cosmic.nix
-
-      # Programs and software
-      ./system/browsers.nix
-      ./system/communication.nix
-      ./system/development.nix
-      ./system/fonts.nix
-      ./system/games.nix
-      ./system/input-remapper.nix
-      ./system/media.nix
-      ./system/msfonts.nix
-      ./system/office.nix
-      ./system/system.nix
-      # ./system/system76.nix
     ];
 
   # Bootloader.
