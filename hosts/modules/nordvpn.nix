@@ -1,22 +1,20 @@
-{ config, nixpkgs, nur, ... }:
-let 
-    lib = nixpkgs.lib;
-    system = "x86_64-linux";
-    nur-modules = import nur rec {
-      nurpkgs = nixpkgs.legacyPackages.${system};
-      pkgs = nixpkgs.legacyPackages.${system};
-    };
-in {
-    imports = [
-        nur.nixosModules.nur
-        nur-modules.repos.LuisChDev.modules.nordvpn
-    ];
+{ config, inputs, ... }:
+{
+  imports = let
+      nur-modules = import inputs.nur rec {
+        nurpkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+      };
+  in [
+      inputs.nur.nixosModules.nur
+      nur-modules.repos.LuisChDev.modules.nordvpn
+  ];
 
-    # Install Nordvpn
-    nixpkgs.config.packageOverrides = pkgs: {
+  # Install Nordvpn
+  nixpkgs.config.packageOverrides = pkgs: {
     nordvpn = config.nur.repos.LuisChDev.nordvpn;
-
-    # Enable the service
-    services.nordvpn.enable = true;
   };
+
+  # Enable the service
+  services.nordvpn.enable = true;
 }

@@ -14,7 +14,6 @@
     acpi
     killall
     fzf
-    pika-backup
     fastfetch
     wallust
     variety
@@ -29,5 +28,6 @@
     orchis-theme
     eza
     distrobox
+    rclone
   ];
 }

@@ -13,7 +13,7 @@
 
                 # Networking
                 ./modules/networking.nix
-                # ./modules/nordvpn.nix
+                ./modules/nordvpn.nix
 
                 # Packages
                 ./modules/browsers.nix
@@ -24,7 +24,7 @@
                 ./modules/media.nix
                 ./modules/office.nix
                 ./modules/system.nix
-                # ./modules/system76.nix
+                ./modules/system76.nix
                 
                 # Fonts
                 ./modules/fonts.nix

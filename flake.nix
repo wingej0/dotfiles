@@ -1,7 +1,15 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    
+    # Nix User Repository
     nur.url = "github:nix-community/NUR";
+
+    # Home Manager
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Cosmic desktop
     nixos-cosmic = {
@@ -29,7 +37,7 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations = {
-      darter-pro = lib.nixosSystem {
+      darter-pro = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           username = "wingej0";
