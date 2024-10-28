@@ -29,5 +29,7 @@
     eza
     distrobox
     rclone
+    yazi
+    btop
   ];
 }

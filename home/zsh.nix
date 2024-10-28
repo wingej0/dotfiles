@@ -24,7 +24,7 @@
             update = "nix flake update";
             office = "wlr-randr --output eDP-1 --off --output DP-6 --mode 1920x1080 0,0 --output DP-7 --mode 1920x1080 1920,0 --output HDMI-A-1 --mode 1280x720 3840,0 --transform 90";
             laptop = "wlr-randr --output eDP-1 --mode 1920x1080 0,0 --output DP-6 --off --output DP-7 --off --output HDMI-A-1 --off";
-            backup = "rclone --log-level NOTICE --log-file=/home/wingej0/.config/rclone/log.txt --stats 2s --progress --transfers 32 --checkers 32 --check-first --retries 1 --max-backlog 999999 --buffer-size 256M sync --copy-links /home/wingej0 --filter-from /home/wingej0/.config/rclone/filter.txt backup:backup";
+            backup = "rclone sync --log-level NOTICE --log-file=/home/wingej0/.config/rclone/log.txt --stats 2s --progress --transfers 32 --checkers 32 --check-first --delete-during --retries 1 --max-backlog 999999 --buffer-size 256M --copy-links /home/wingej0 --filter-from /home/wingej0/.config/rclone/filter.txt backup:backup";
         };
     };
 }
