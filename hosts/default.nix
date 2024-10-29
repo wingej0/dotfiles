@@ -29,6 +29,9 @@
                 # Fonts
                 ./modules/fonts.nix
                 ./modules/msfonts.nix
+
+                # Users
+                ./modules/users.nix
             ]
         else
             [ ];
