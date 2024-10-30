@@ -30,12 +30,8 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... } @ inputs: 
-  let 
-    lib = nixpkgs.lib;
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-  in {
+  outputs = { nixpkgs, ... } @ inputs: 
+  {
     nixosConfigurations = {
       darter-pro = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -48,11 +44,5 @@
         ];
       };
     };
-    # homeConfigurations = {
-    #   wingej0 = home-manager.lib.homeManagerConfiguration {
-    #     inherit pkgs;
-    #     modules = [ ./home.nix ];
-    #   };
-    # };
   };
 }
