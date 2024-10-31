@@ -31,5 +31,8 @@
     rclone
     yazi
     btop
+    # Maybe
+    kitty
+    foot
   ];
 }

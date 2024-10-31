@@ -5,6 +5,9 @@
     ./system/zsh.nix
     ./system/gnome.nix
     ./system/gtk.nix
+
+    ./programs/kitty.nix
+    ./programs/foot.nix
   ];
 
   programs.zsh.enable = true; 
