@@ -2,9 +2,12 @@
   programs.foot = {
     enable = true;
     settings = {
+      csd = {
+        size = 0;
+      };
       main = {
-        font = "Fira Code Nerd Font:style=Medium:size=12";
-        pad="10x10";
+        font = "Fira Code Nerd Font:size=10";
+        pad="15x15";
       };
       mouse = {
         hide-when-typing = "yes";

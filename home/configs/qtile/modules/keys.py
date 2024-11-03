@@ -5,7 +5,7 @@ from libqtile.lazy import lazy
 from .groups import groups
 
 mod = "mod4"
-terminal = "alacritty --class=terminal"
+terminal = "kitty"
 
 keys = [
     # Open terminal

@@ -317,7 +317,7 @@ def init_widgets(monitor):
             func=lambda: subprocess.check_output(f"{os.path.expanduser('~')}/.dotfiles/home/configs/qtile/scripts/power-profile.sh").decode("utf-8").strip(),
             update_interval=30,
             mouse_callbacks={
-                'Button1' : lazy.spawn(f"alacritty -e {os.path.expanduser('~')}/.dotfiles/home/configs/qtile/scripts/power-management.sh"),
+                'Button1' : lazy.spawn(f"kitty -e {os.path.expanduser('~')}/.dotfiles/home/configs/qtile/scripts/power-management.sh"),
             },
             **widget_defaults,
             **light_widgets
@@ -379,7 +379,7 @@ def init_widgets(monitor):
             interface = "wlp0s20f3",
             padding_y = 9,
             mouse_callbacks={
-                'Button3' : lazy.spawn('alacritty -e nmtui'),
+                'Button3' : lazy.spawn('kitty -e nmtui'),
             },
             **widget_defaults,
             **light_widgets

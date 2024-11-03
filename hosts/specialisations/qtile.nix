@@ -10,7 +10,7 @@
         qtile-desktop.configuration = {
         
             # Enable Qtile
-            services.xserver.displayManager.lightdm.enable = true;
+            services.displayManager.sddm.enable = true;
             services.xserver.windowManager.qtile = {
                 enable = true;
                 extraPackages = python3Packages: with python3Packages; [
