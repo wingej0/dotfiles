@@ -5,7 +5,6 @@
   environment.systemPackages = with pkgs; [
     # System Packages
     zsh
-    alacritty
     git
     gh
     wget
@@ -29,10 +28,8 @@
     eza
     distrobox
     rclone
-    yazi
+    # yazi
     btop
-    # Maybe
     kitty
-    foot
   ];
 }

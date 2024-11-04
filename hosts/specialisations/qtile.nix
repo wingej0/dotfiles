@@ -1,8 +1,10 @@
 { config, pkgs,  inputs, ... }:
 {
     imports = [
-        (_: { nixpkgs.overlays = [ inputs.qtile-flake.overlays.default ]; })
-        ./../overlays/qtile-extras-overlay.nix
+        # These imports provide the latest git commit of Qtile.
+        # If they are commented out, the release version will be installed.
+        # (_: { nixpkgs.overlays = [ inputs.qtile-flake.overlays.default ]; })
+        # ./../overlays/qtile-extras-overlay.nix
     ];
     
     specialisation = {
@@ -34,7 +36,6 @@
                 # Gnome stuff
                 gnome-online-accounts
                 gnome-calendar
-                # geary
                 nautilus
 
                 # Wayland Programs
@@ -42,7 +43,7 @@
                 grim
                 slurp
                 swappy
-                wf-recorder
+                # wf-recorder
                 zenity
                 wl-clipboard
                 cliphist
