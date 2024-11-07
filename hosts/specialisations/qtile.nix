@@ -1,10 +1,10 @@
-{ config, pkgs,  inputs, ... }:
+{ config, pkgs, inputs, ... }:
 {
     imports = [
         # These imports provide the latest git commit of Qtile.
         # If they are commented out, the release version will be installed.
         # (_: { nixpkgs.overlays = [ inputs.qtile-flake.overlays.default ]; })
-        # ./../overlays/qtile-extras-overlay.nix
+        ./../overlays/qtile-extras-overlay.nix
     ];
     
     specialisation = {
@@ -43,7 +43,7 @@
                 grim
                 slurp
                 swappy
-                # wf-recorder
+                wf-recorder
                 zenity
                 wl-clipboard
                 cliphist

@@ -8,5 +8,5 @@ dunst &
 system76-power daemon &
 wl-paste --type text --watch cliphist store &
 wl-paste --type image --watch cliphist store &
-cp ~/.dotfiles/configs/qtile/scripts/variety-wayland.sh ~/.config/variety/scripts/set_wallpaper &
+cp ~/.dotfiles/home/configs/qtile/scripts/variety-wayland.sh ~/.config/variety/scripts/set_wallpaper &
 variety

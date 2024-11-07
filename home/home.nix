@@ -7,7 +7,7 @@
     ./system/gtk.nix
 
     ./programs/kitty.nix
-    ./programs/foot.nix
+    # ./programs/foot.nix
   ];
 
   programs.zsh.enable = true; 

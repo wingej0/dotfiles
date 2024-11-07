@@ -28,7 +28,7 @@
     eza
     distrobox
     rclone
-    # yazi
+    yazi
     btop
     kitty
   ];
