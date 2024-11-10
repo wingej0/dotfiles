@@ -38,13 +38,6 @@
       size = 11;
     };
 
-    cursorTheme = {
-      # name = "Adwaita";
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
-      size = 24;
-    };
-
     theme = {
       name = "Orchis";
       package = pkgs.orchis-theme;

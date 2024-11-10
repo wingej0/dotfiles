@@ -1,7 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
+  imports = 
+  [
     ./system/zsh.nix
     ./system/gnome.nix
     ./system/gtk.nix

@@ -4,18 +4,12 @@
     programs.zsh = {
         enable = true;
         plugins = [
-        {
-            name = "powerlevel10k";
-            src = pkgs.zsh-powerlevel10k;
-            file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-        }
+            {
+                name = "powerlevel10k";
+                src = pkgs.zsh-powerlevel10k;
+                file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+            }
         ];
-        initExtra = ''
-            source ~/.p10k.zsh
-            bindkey -e
-            cat ~/.cache/wallust/sequences
-            fastfetch
-        '';
         shellAliases = {
             # ls = "eza --icons";
             ll = "eza --icons -la";
@@ -27,3 +21,6 @@
         };
     };
 }
+
+# Add this to initExtra to reconfigure wallust
+# cat ~/.cache/wallust/sequences

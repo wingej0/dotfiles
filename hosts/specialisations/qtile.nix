@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, username, ... }:
 {
     imports = [
         # These imports provide the latest git commit of Qtile.
@@ -14,6 +14,7 @@
             # Enable Qtile
             services.displayManager.sddm.enable = true;
             services.xserver.windowManager.qtile = {
+                package = inputs.qtile-flake.overlays.default;
                 enable = true;
                 extraPackages = python3Packages: with python3Packages; [
                     qtile-extras
@@ -89,6 +90,31 @@
 
             environment.sessionVariables = {
                 NIXOS_OZONE_WL = "1";
+            };
+
+            home-manager.users.${username} = {
+
+                programs.kitty.settings = {
+                    tab_bar_style = "powerline";
+                    tab_powerline_style = "round";
+                    hide_window_decorations = true;
+                    background_opacity = 0.8;
+                    window_padding_width = 10;
+                    confirm_os_window_close = 0;
+                };
+
+                programs.zsh.initExtra = ''
+                    source ~/.p10k.zsh
+                    cat ~/.cache/wallust/sequences
+                    bindkey -e
+                    fastfetch
+                '';
+
+                gtk.cursorTheme = {
+                    name = "Bibata-Modern-Classic";
+                    package = pkgs.bibata-cursors;
+                    size = 24;
+               };
             };
         };
     };
