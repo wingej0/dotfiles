@@ -19,12 +19,19 @@
                 # Gnome stuff
                 gnome-online-accounts
                 gnome-calendar
+
+                # Clipboard manager
+                cosmic-ext-applet-clipboard-manager
             ];
 
             programs.dconf.enable = true;
             services.gnome.evolution-data-server.enable = true;
             services.gnome.gnome-online-accounts.enable = true;
             services.gnome.gnome-keyring.enable = true;
+
+            environment.sessionVariables = {
+                COSMIC_DATA_CONTROL_ENABLED = "1"; 
+            };
 
             home-manager.users.${username} = {
 
