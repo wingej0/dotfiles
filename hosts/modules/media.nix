@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 {
-  imports = [];
-
   environment.systemPackages = with pkgs; [
-    # Media
     obs-studio
     kdePackages.kdenlive
     mpv
@@ -15,5 +12,6 @@
     cider
     annotator
     ffmpeg
+    loupe
   ];
 }

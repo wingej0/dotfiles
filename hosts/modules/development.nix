@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 {
-  imports = [];
-
   environment.systemPackages = with pkgs; [
-    # Development
     vscode-fhs
     jetbrains.pycharm-community
     mongodb-compass

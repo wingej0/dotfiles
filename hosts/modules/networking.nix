@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 {
-  imports = [];
-
   # Enable networking
   networking.hostName = "darter-pro"; # Define your hostname.
   networking.networkmanager.enable = true;

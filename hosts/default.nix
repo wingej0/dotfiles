@@ -4,7 +4,7 @@
         if hostname == "darter-pro" then
             [
                 # Configuration
-                ./configuration.nix
+                ./darter-pro/configuration.nix
 
                 # Specialisations
                 ./specialisations/cosmic.nix
@@ -32,6 +32,9 @@
 
                 # Users
                 ./modules/users.nix
+
+                # Virtualization (virt-manager, distrobox)
+                ./modules/virtualization.nix
             ]
         else
             [ ];

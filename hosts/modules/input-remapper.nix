@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 {
-  imports = [];
-
   environment.systemPackages = with pkgs; [
     input-remapper
   ];

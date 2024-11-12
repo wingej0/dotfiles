@@ -38,9 +38,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -68,15 +65,6 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
-
-  # Virtualization
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

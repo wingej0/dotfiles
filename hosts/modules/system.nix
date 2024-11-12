@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 {
-  imports = [];
-
   environment.systemPackages = with pkgs; [
     # System Packages
     zsh
@@ -20,13 +18,10 @@
     remmina
     popsicle
     gparted
-    loupe
     file-roller
-    virt-manager
     bibata-cursors
     orchis-theme
     eza
-    distrobox
     rclone
     yazi
     btop
