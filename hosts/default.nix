@@ -12,7 +12,7 @@
                 ./specialisations/qtile.nix
 
                 # Networking
-                ./modules/networking.nix
+                ./darter-pro/networking.nix
                 ./modules/nordvpn.nix
 
                 # Packages
@@ -35,6 +35,11 @@
 
                 # Virtualization (virt-manager, distrobox)
                 ./modules/virtualization.nix
+            ]
+        else if hostname == "dis-winget" then
+            [
+                # Configuration
+                ./dis-winget/configuration.nix
             ]
         else
             [ ];

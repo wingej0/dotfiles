@@ -53,7 +53,6 @@
   # plain files is through 'home.file'.
   home.file = {
     # Source dotfiles to .config
-    ".config/alacritty".source = ./configs/alacritty;
     ".config/dunst".source = ./configs/dunst;
     ".config/picom".source = ./configs/picom;
     ".config/qtile".source = ./configs/qtile;

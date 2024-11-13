@@ -33,11 +33,23 @@
   outputs = { nixpkgs, ... } @ inputs: 
   {
     nixosConfigurations = {
+      # Personal laptop (System76 Darter-Pro)
       darter-pro = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
           username = "wingej0";
           hostname = "darter-pro";
+        };
+        modules = [
+          ./hosts
+        ];
+      };
+      # Work laptop (HP ZBook Power G7 Workstation)
+      dis-winget = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit inputs;
+          username = "wingej0";
+          hostname = "dis-winget";
         };
         modules = [
           ./hosts
