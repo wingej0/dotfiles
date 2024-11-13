@@ -3,27 +3,15 @@
 {
   imports = 
   [
+    # System Configs
     ./system/zsh.nix
     ./system/gnome.nix
     ./system/gtk.nix
 
+    # Program Configs
     ./programs/kitty.nix
-    # ./programs/foot.nix
+    ./programs/fastfetch.nix
   ];
-
-  programs.zsh.enable = true; 
-
-  # Home Manager needs a bit of information about you and the paths it should
-  # manage.
-  # home.username = "wingej0";
-  # home.homeDirectory = "/home/wingej0";
-  dconf.enable = true;
-  dconf.settings = {
-    "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
-    };
-  };
 
   # Edit Mailspring desktop file
   xdg.desktopEntries.mailspring = {
@@ -67,7 +55,6 @@
     # Source dotfiles to .config
     ".config/alacritty".source = ./configs/alacritty;
     ".config/dunst".source = ./configs/dunst;
-    ".config/fastfetch".source = ./configs/fastfetch;
     ".config/picom".source = ./configs/picom;
     ".config/qtile".source = ./configs/qtile;
     ".config/rofi".source = ./configs/rofi;

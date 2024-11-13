@@ -11,7 +11,7 @@
             }
         ];
         shellAliases = {
-            # ls = "eza --icons";
+            ls = "eza --icons";
             ll = "eza --icons -la";
             nrs = "sudo nixos-rebuild switch --flake . --verbose --show-trace --specialisation";
             update = "nix flake update";
@@ -21,6 +21,3 @@
         };
     };
 }
-
-# Add this to initExtra to reconfigure wallust
-# cat ~/.cache/wallust/sequences

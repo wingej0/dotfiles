@@ -7,6 +7,10 @@
       "org/gnome/desktop/interface" = {
         color-scheme = "prefer-light";
       };
+      "org/virt-manager/virt-manager/connections" = {
+        autoconnect = ["qemu:///system"];
+        uris = ["qemu:///system"];
+      };
     };
   };
 
