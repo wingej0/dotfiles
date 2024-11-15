@@ -40,6 +40,24 @@
             [
                 # Configuration
                 ./dis-winget/configuration.nix
+
+                # Networking
+                ./dis-winget/networking.nix
+
+                # Cron
+                ./dis-winget/cron.nix
+
+                # Packages
+                ./modules/browsers.nix
+                # ./modules/development.nix
+                ./modules/system.nix
+                ./modules/nvidia.nix
+                
+                # Fonts
+                ./modules/fonts.nix
+
+                # Users
+                ./modules/users.nix
             ]
         else
             [ ];

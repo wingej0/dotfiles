@@ -17,18 +17,8 @@
   # Define the swap
   swapDevices = [{
     device = "/swapfile";
-    size = 16 * 1024; # 16GB
+    size = 64 * 1024; # 16GB
   }];
-
-  networking.hostName = "dis-winget"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -52,53 +42,6 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
-  # Enable OpenGL
-  hardware.graphics = {
-    enable = true;
-  };
-
-  # Load nvidia driver for Xorg and Wayland
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-
-    # Modesetting is required.
-    modesetting.enable = true;
-
-    # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-    # Enable this if you have graphical corruption issues or application crashes after waking
-    # up from sleep. This fixes it by saving the entire VRAM memory to /tmp/ instead 
-    # of just the bare essentials.
-    powerManagement.enable = false;
-
-    # Fine-grained power management. Turns off GPU when not in use.
-    # Experimental and only works on modern Nvidia GPUs (Turing or newer).
-    powerManagement.finegrained = false;
-
-    # Use the NVidia open source kernel module (not to be confused with the
-    # independent third-party "nouveau" open source driver).
-    # Support is limited to the Turing and later architectures. Full list of 
-    # supported GPUs is at: 
-    # https://github.com/NVIDIA/open-gpu-kernel-modules#compatible-gpus 
-    # Only available from driver 515.43.04+
-    # Currently alpha-quality/buggy, so false is currently the recommended setting.
-    open = false;
-
-    # Enable the Nvidia settings menu,
-    # accessible via `nvidia-settings`.
-    nvidiaSettings = true;
-
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-
-    prime = {
-      sync.enable = true;
-
-      intelBusId = "PCI:1:0:0";
-      nvidiaBusId = "PCI:0:2:0";
-    };
-  };
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -129,94 +72,9 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.wingej0 = {
-    isNormalUser = true;
-    description = "Jeff Winget";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-  };
-
-  # Install firefox.
-  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-    vim
-    git
-    lshw
-    vscode-fhs
-    jetbrains.pycharm-community
-    mongodb-compass
-    insomnia
-    mongodb
-    mongosh
-    gh
-
-    # Python Environment
-    (python3.withPackages (ps: with ps; [
-      requests
-      pip
-      numpy
-      pandas
-      jupyterlab
-      pymongo
-      matplotlib
-      matplotlib-venn
-      gspread
-      sqlalchemy
-      pyodbc
-    ]))
-  ];
-
-  environment.unixODBCDrivers = with pkgs.unixODBCDrivers; [ msodbcsql18 ];
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable mongodb
-  services.mongodb = {
-    enable = true;
-    enableAuth = true;
-    initialRootPassword = "mongodbroot";
-    bind_ip = "0.0.0.0";
-  };
-
-  # Enable cron jobs
-  services.cron = {
-    enable = true;
-    systemCronJobs = [
-      "20 15 * * * wingej0 python /home/wingej0/dev/alo/alo_updater.py"
-      "0 16 * * * wingej0 /home/wingej0/dev/daily.sh"
-    ];
-  };
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 3389 27017 ];
-  networking.firewall.allowedUDPPorts = [ 3389 27017 ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
