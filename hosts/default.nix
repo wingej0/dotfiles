@@ -52,7 +52,7 @@
 
                 # Packages
                 ./modules/browsers.nix
-                # ./modules/development.nix
+                ./modules/development.nix
                 ./modules/system.nix
                 ./modules/nvidia.nix
                 
