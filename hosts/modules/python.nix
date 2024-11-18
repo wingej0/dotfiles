@@ -15,6 +15,5 @@
         sqlalchemy
         pyodbc
         ]))
-    ]
-    
+    ];
 }
