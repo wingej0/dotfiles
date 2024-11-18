@@ -69,11 +69,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Change shell to zsh
-  environment.shells = with pkgs; [zsh bash];
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

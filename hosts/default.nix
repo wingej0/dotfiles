@@ -25,6 +25,7 @@
                 ./modules/office.nix
                 ./modules/system.nix
                 ./modules/system76.nix
+                ./modules/shells.nix
                 
                 # Fonts
                 ./modules/fonts.nix
@@ -55,6 +56,7 @@
                 ./modules/development.nix
                 ./modules/system.nix
                 ./modules/nvidia.nix
+                ./modules/shells.nix
                 
                 # Fonts
                 ./modules/fonts.nix
