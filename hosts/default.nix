@@ -57,6 +57,7 @@
                 ./modules/system.nix
                 # ./modules/nvidia.nix
                 ./modules/shells.nix
+                ./modules/python.nix
                 
                 # Fonts
                 ./modules/fonts.nix
