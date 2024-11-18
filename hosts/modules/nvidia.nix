@@ -46,4 +46,8 @@
             nvidiaBusId = "PCI:0:2:0";
         };
     };
+
+    environment.sessionVariables = {
+        GSK_RENDERER = "ngl gtk4-demo";
+    };
 }
