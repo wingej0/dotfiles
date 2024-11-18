@@ -26,5 +26,6 @@
     yazi
     btop
     kitty
+    lshw
   ];
 }

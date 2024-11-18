@@ -40,10 +40,10 @@
         package = config.boot.kernelPackages.nvidiaPackages.stable;
 
         prime = {
-        sync.enable = true;
+            sync.enable = true;
 
-        intelBusId = "PCI:1:0:0";
-        nvidiaBusId = "PCI:0:2:0";
+            intelBusId = "PCI:1:0:0";
+            nvidiaBusId = "PCI:0:2:0";
         };
     };
 }
