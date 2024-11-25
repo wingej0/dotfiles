@@ -67,6 +67,10 @@
                         hot-keys = false;
                         running-indicator-style = "DASHES";
                     };
+
+                    "org/gnome/shell/extensions/blur-my-shell/panel" = {
+                        pipeline = "pipeline-default-rounded"
+                    };
                 };
 
             };
