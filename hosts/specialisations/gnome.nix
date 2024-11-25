@@ -69,7 +69,7 @@
                     };
 
                     "org/gnome/shell/extensions/blur-my-shell/panel" = {
-                        pipeline = "pipeline-default-rounded"
+                        pipeline = "pipeline-default-rounded";
                     };
                 };
 
