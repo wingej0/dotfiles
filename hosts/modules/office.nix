@@ -5,7 +5,7 @@
     obsidian
     onlyoffice-bin
     evince
-    libreoffice-fresh
+    libreoffice
     planify
     mailspring
   ];

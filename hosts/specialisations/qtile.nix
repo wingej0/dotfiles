@@ -3,7 +3,7 @@
     imports = [
         # These imports provide the latest git commit of Qtile.
         # If they are commented out, the release version will be installed.
-        # (_: { nixpkgs.overlays = [ inputs.qtile-flake.overlays.default ]; })
+        (_: { nixpkgs.overlays = [ inputs.qtile-flake.overlays.default ]; })
         ./../overlays/qtile-extras-overlay.nix
     ];
     
