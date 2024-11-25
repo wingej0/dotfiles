@@ -33,6 +33,26 @@
                     package = pkgs.bibata-cursors;
                     size = 24;
                };
+
+               dconf.settings = {
+
+                    "org/gnome/shell" = {
+                        disable-user-extensions = false;
+
+                    # `gnome-extensions list` for a list
+                    enabled-extensions = [
+                            "AlphabeticalAppGrid@stuarthayhurst"
+                            "appindicatorsupport@rgcjonas.gmail.com"
+                            "blur-my-shell@aunetx"
+                            "caffeine@patapon.info"
+                            "clipboard-indicator@tudmotu.com"
+                            "dash-to-dock@micxgx.gmail.com"
+                            "tiling-assistant@leleat-on-github"
+                            "user-theme@gnome-shell-extensions.gcampax.github.com"
+                        ];
+                    };
+                };
+
             };
         };
     };
