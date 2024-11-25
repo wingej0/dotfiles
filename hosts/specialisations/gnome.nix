@@ -55,6 +55,10 @@
                     "org/gnome/shell/extensions/user-theme" = {
                         name = "Orchis";
                     };
+
+                    "org/gnome/desktop/interface" = {
+                        show-battery-percentage = true;
+                    };
                 };
 
             };
