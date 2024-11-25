@@ -59,6 +59,14 @@
                     "org/gnome/desktop/interface" = {
                         show-battery-percentage = true;
                     };
+
+                    "org/gnome/shell/extensions/dash-to-dock" = {
+                        multi-monitor = true;
+                        dock-position = "LEFT";
+                        dash-max-icon-size = 24;
+                        hot-keys = false;
+                        running-indicator-style = "DASHES";
+                    };
                 };
 
             };
