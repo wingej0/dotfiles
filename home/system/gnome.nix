@@ -14,6 +14,7 @@
         gnomeExtensions.user-themes
         gnomeExtensions.gnordvpn-local
 
-        pkgs.gnome-calculator
+        gnome-calculator
+        gnome-remote-desktop
     ];
 }
