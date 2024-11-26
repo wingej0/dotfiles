@@ -68,6 +68,8 @@
     #media-session.enable = true;
   };
 
+  services.gnome.gnome-remote-desktop.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
