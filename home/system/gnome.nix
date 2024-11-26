@@ -17,4 +17,6 @@
         gnome-calculator
         gnome-remote-desktop
     ];
+
+    services.gnome.gnome-remote-desktop.enable = true;
 }
