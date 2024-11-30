@@ -5,7 +5,7 @@
         noto-fonts-cjk-sans
         noto-fonts-color-emoji
         dejavu_fonts
-        fira-code-nerdfont
+        nerd-fonts.fira-code
         font-awesome
     ];
 }
