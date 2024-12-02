@@ -23,6 +23,12 @@
     size = 64 * 1024; # 16GB
   }];
 
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+  
+  services.xserver.displayManager.ligthdm.enable = true;
+  services.xserver.desktopManager.cinnamon.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Set your time zone.

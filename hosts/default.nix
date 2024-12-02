@@ -45,9 +45,6 @@
                 # Networking
                 ./dis-winget/networking.nix
 
-                # Gnome 
-                ./specialisations/gnome.nix
-
                 # Cron
                 ./dis-winget/cron.nix
 
