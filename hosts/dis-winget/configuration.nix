@@ -27,7 +27,7 @@
   services.xserver.enable = true;
   
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce4.enable = true;
+  services.xserver.desktopManager.xfce.enable = true;
 
   services.xrdp.enable = true;
   services.xrdp.defaultWindowManager = "xfce4-session";
