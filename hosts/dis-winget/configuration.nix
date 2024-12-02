@@ -30,7 +30,7 @@
   services.xserver.desktopManager.cinnamon.enable = true;
 
   services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "cinnamon-session";
+  services.xrdp.defaultWindowManager = "Muffin";
   services.xrdp.openFirewall = true;
 
   home-manager.users.${username} = {
