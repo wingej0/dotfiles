@@ -23,14 +23,12 @@
     size = 64 * 1024; # 16GB
   }];
 
-  # Enable the X11 windowing system.
   services.xserver.enable = true;
-  
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.cinnamon.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
 
   services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "cinnamon-session-cinnamon";
+  services.xrdp.defaultWindowManager = "startplasma-x11";
   services.xrdp.openFirewall = true;
 
   home-manager.users.${username} = {
