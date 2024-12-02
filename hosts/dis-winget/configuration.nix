@@ -29,6 +29,32 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.cinnamon.enable = true;
 
+  home-manager.users.${username} = {
+
+      programs.kitty.settings = {
+          tab_bar_style = "powerline";
+          tab_powerline_style = "round";
+          hide_window_decorations = true;
+          background_opacity = 0.8;
+          window_padding_width = 10;
+          confirm_os_window_close = 0;
+      };
+
+      programs.zsh.initExtra = ''
+          source ~/.p10k.zsh
+          cat ~/.cache/wallust/sequences
+          bindkey -e
+          fastfetch
+      '';
+
+      gtk.cursorTheme = {
+          name = "Bibata-Modern-Classic";
+          package = pkgs.bibata-cursors;
+          size = 24;
+      };
+
+  };
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Set your time zone.
@@ -74,7 +100,7 @@
     #media-session.enable = true;
   };
 
-  services.gnome.gnome-remote-desktop.enable = true;
+  # services.gnome.gnome-remote-desktop.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
