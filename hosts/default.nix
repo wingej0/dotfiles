@@ -55,7 +55,7 @@
                 ./modules/browsers.nix
                 ./modules/development.nix
                 ./modules/system.nix
-                # ./modules/nvidia.nix
+                ./modules/nvidia.nix
                 ./modules/shells.nix
                 ./modules/python.nix
                 
