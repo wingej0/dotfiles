@@ -29,6 +29,10 @@
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.cinnamon.enable = true;
 
+  services.xrdp.enable = true;
+  services.xrdp.defaultWindowManager = "muffin";
+  services.xrdp.openFirewall = true;
+
   home-manager.users.${username} = {
 
       programs.kitty.settings = {
