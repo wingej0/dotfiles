@@ -27,10 +27,10 @@
   services.xserver.enable = true;
   
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.cinnamon.enable = true;
+  services.xserver.desktopManager.xfce4.enable = true;
 
   services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "cinnamon-session-cinnamon";
+  services.xrdp.defaultWindowManager = "xfce4-session";
   services.xrdp.openFirewall = true;
 
   home-manager.users.${username} = {
