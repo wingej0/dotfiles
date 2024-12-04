@@ -24,12 +24,9 @@
   }];
 
   services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-
-  services.xrdp.enable = true;
-  services.xrdp.defaultWindowManager = "startplasma-x11";
-  services.xrdp.openFirewall = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true; 
+  services.xserver.desktopManager.plasma6.enable = true;
 
   home-manager.users.${username} = {
 
